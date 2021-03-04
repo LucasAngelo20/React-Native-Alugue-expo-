@@ -5,10 +5,12 @@ import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
 import New from "../components/New";
+import House from "../components/House";
+import Recommended from "../components/Recommended";
 
 export default function Home() {
-    const navigation = useNavigation()
-    
+  const navigation = useNavigation();
+
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -37,37 +39,84 @@ export default function Home() {
           cover={require("../assets/house1.jpg")}
           name="Casa de praia"
           description="Casa nova uma quadra do mar, lugar seguro e monitorad 24horas"
-          onPress={() => navigation.navigate('detail')}
+          onPress={() => navigation.navigate("detail")}
         />
         <New
           cover={require("../assets/house2.jpg")}
           name="Casa de praia"
           description="Casa nova uma quadra do mar, lugar seguro e monitorad 24horas"
-          onPress={() => navigation.navigate('detail')}
+          onPress={() => navigation.navigate("detail")}
         />
         <New
           cover={require("../assets/house3.jpg")}
           name="Casa moderna"
           description="Casa nova uma quadra do mar, lugar seguro e monitorad 24horas"
-          onPress={() => navigation.navigate('detail')}
+          onPress={() => navigation.navigate("detail")}
         />
         <New
           cover={require("../assets/house4.jpg")}
           name="Casa de festas"
           description="Casa nova uma quadra do mar, lugar seguro e monitorad 24horas"
-          onPress={() => navigation.navigate('detail')}
+          onPress={() => navigation.navigate("detail")}
         />
         <New
           cover={require("../assets/house5.jpg")}
           name="Casa de campo"
           description="Casa nova uma quadra do mar, lugar seguro e monitorad 24horas"
-          onPress={() => navigation.navigate('detail')}
+          onPress={() => navigation.navigate("detail")}
         />
         <New
           cover={require("../assets/house6.jpg")}
           name="Casa hostel"
           description="Casa nova uma quadra do mar, lugar seguro e monitorad 24horas"
-          onPress={() => navigation.navigate('detail')}
+          onPress={() => navigation.navigate("detail")}
+        />
+      </ScrollView>
+      <View
+        style={{ flexDirection: "row", marginBottom: 10, alignItems: "center" }}
+      >
+        <Text style={[styles.title, { marginTop: 20 }]}>Próximo de você</Text>
+      </View>
+
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={{ paddingHorizontal: 15 }}
+      >
+        <House cover={require("../assets/house6.jpg")} />
+        <House cover={require("../assets/house5.jpg")} />
+        <House cover={require("../assets/house4.jpg")} />
+        <House cover={require("../assets/house3.jpg")} />
+        <House cover={require("../assets/house2.jpg")} />
+        <House cover={require("../assets/house1.jpg")} />
+      </ScrollView>
+
+      <Text style={[styles.title, { marginTop: 20 }]}>Dica do dia</Text>
+
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={{ paddingHorizontal: 15 }}
+      >
+        <Recommended
+          cover={require("../assets/house3.jpg")}
+          house="Casa Floripa"
+          offer="20% OFF"
+        />
+        <Recommended
+          cover={require("../assets/house4.jpg")}
+          house="Casa São Paulo"
+          offer="25% OFF"
+        />
+        <Recommended
+          cover={require("../assets/house2.jpg")}
+          house="Casa Rio de Janeiro"
+          offer="10% OFF"
+        />
+        <Recommended
+          cover={require("../assets/house6.jpg")}
+          house="Casa Curitiba"
+          offer="30% OFF"
         />
       </ScrollView>
     </ScrollView>
@@ -89,7 +138,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "98%",
     backgroundColor: "#fff",
-    elevation: 2,
+
+    //Shadow
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
+    //Shadow
+
     paddingHorizontal: 10,
     height: 37,
     borderRadius: 10,

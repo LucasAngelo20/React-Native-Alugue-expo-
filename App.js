@@ -1,8 +1,7 @@
 import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { AppLoading } from "expo";
+//import { AppLoading } from "expo-app-loading";
 import {
   useFonts,
   Montserrat_400Regular,
@@ -19,9 +18,9 @@ export default function App() {
     Montserrat_700Bold,
   });
 
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
+  //if (!fontsLoaded) {
+   // return <AppLoading />;
+ //}
   return (
     <>
       <StatusBar style="dark" backgroundColor="#fff" translucent={false} />
